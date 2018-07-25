@@ -29,5 +29,7 @@ function reverseString3(str) {
         return str;
     }
     return str.charAt(str.length - 1) + reverseString3(str.substr(1, str.length - 2)) + str.charAt(0);
+    // or simply
+    // return str[str.length - 1] + reverseString3(str.substr(1, str.length - 2)) + str[0];
 }
 console.log(reverseString3('Greetings from the interview'));

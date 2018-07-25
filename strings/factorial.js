@@ -1,38 +1,22 @@
 // https://en.wikipedia.org/wiki/Factorial
+// 5! = 5*4*3*2*1 = 120
 
-function factorialize1(num) {
-    if (num < 0) {
-        return -1;
+function factorial(num) {
+    let result = 1;
+
+    for(let i = 2; i <= num; i++) {
+        result *= i;
     }
 
-    if (num <= 1) {
-        return 1;
-    }
-
-    return (num * factorialize1(num - 1));
-}
-console.log(factorialize1(5));
-
-function factorialize2(num) {
-    let result = num;
-    if (num === 0 || num === 1) {
-        return 1;
-    }
-    while (num > 1) {
-        num--;
-        result *= num;
-    }
     return result;
 }
-console.log(factorialize2(5));
+console.log(factorial(5));
 
-function factorialize3(num) {
-    if (num === 0 || num === 1) {
+function factorial2(num) {
+    if (num < 2) {
         return 1;
     }
-    for (let i = num - 1; i >= 1; i--) {
-        num *= i;
-    }
-    return num;
+
+    return (num * factorial2(num - 1));
 }
-console.log(factorialize3(5));
+console.log(factorial2(5));
