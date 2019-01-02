@@ -1,0 +1,15 @@
+{
+  "name": "computer-science",
+  "version": "1.0.0",
+  "description": "interview preparation",
+  "main": "i",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Aliaksei Alioshka",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^23.6.0"
+  }
+}
