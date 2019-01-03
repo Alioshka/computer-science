@@ -1,3 +1,5 @@
+'use strict';
+
 const {
     reverse1,
     reverse2_1,
