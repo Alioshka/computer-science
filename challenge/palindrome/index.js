@@ -39,12 +39,8 @@ function palindrome2(str) {
     it gives us the reverted number we want.
     Continuing this process would give us the reverted number with more digits.
 
-    Now the question is, how do we know that we've reached the half of the number?
-
-    Since we divided the number by 10,
-    and multiplied the reversed number by 10,
-    when the original number is less than the reversed number,
-    it means we've processed half of the number digits.
+    Complexity analysis: https://leetcode.com/problems/palindrome-number/solution/
+    for improved solution (when we go through the half, not all digits) - in current example we go through all digits
 */
 
 function palindrome3(input) {
@@ -59,20 +55,13 @@ function palindrome3(input) {
         }
 
         let revertedNumber = 0;
-        while(input > revertedNumber) {
-            revertedNumber = revertedNumber * 10 + input % 10;
-            input = Math.floor(input /10);
+        let tempNumber = input;
+        while(tempNumber > 0) {
+            revertedNumber = revertedNumber * 10 + tempNumber % 10;
+            tempNumber = Math.floor(tempNumber /10);
         }
 
-        // When the length is an odd number, we can get rid of the middle digit by revertedNumber/10
-        // For example when the input is 12321,
-        // at the end of the while loop we get input = 12, revertedNumber = 123,
-        // since the middle digit doesn't matter in palidrome(it will always equal to itself),
-        // we can simply get rid of it.
-        return input === revertedNumber || input === Math.floor(revertedNumber/10);
-
-        // complexity analysis: https://leetcode.com/problems/palindrome-number/solution/
-
+        return input === revertedNumber;
     }
     if(typeof input === 'string'){
         const reversed = input.split('').reverse().join('');
