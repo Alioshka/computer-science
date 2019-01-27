@@ -6,7 +6,11 @@
 3. installed dependencies: `npm i`
 
 ## Run tests
-1. `npm test sourcefolder`:
+* run all tests:
+```
+npm run test:all
+```
+* run specific tests use `npm test sourcefolder` command:
 ```
 npm test challenge/reverse-string
 ```
