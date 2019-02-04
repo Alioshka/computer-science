@@ -5,7 +5,7 @@
   "main": "i",
   "scripts": {
     "test": "./node_modules/jest/bin/jest.js",
-    "test:all": "npm test challenge"
+    "test:all": "npm test challenges"
   },
   "author": "Aliaksei Alioshka",
   "license": "ISC",

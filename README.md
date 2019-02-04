@@ -12,5 +12,5 @@ npm run test:all
 ```
 * run specific tests use `npm test sourcefolder` command:
 ```
-npm test challenge/reverse-string
+npm test challenges/reverse-string
 ```
