@@ -1,11 +1,6 @@
 'use strict';
 
-const {
-    fib1,
-    fib2,
-    fib3,
-    fib4
-} = require('./index');
+const src = require('./index');
 
 const testData = {
     0:0,
@@ -21,34 +16,15 @@ const testData = {
     39:63245986
 };
 
-describe('fib1() calculates correct fib value', () => {
-    Object.keys(testData).forEach(key => {
-        test(`for "${key}" correct fibonacci sequence is ${testData[key]}`, () => {
-            expect(fib1(parseInt(key))).toEqual(testData[key]);
-        });
-    });
-});
+Object.entries(src).forEach(entry => {
+    let fnName, fn;
+    [fnName, fn] = entry;
 
-describe('fib2() calculates correct fib value', () => {
-    Object.keys(testData).forEach(key => {
-        test(`calculated fib value for "${key}" is ${testData[key]}`, () => {
-            expect(fib2(parseInt(key))).toEqual(testData[key]);
-        });
-    });
-});
-
-describe('fib3() calculates correct fib value', () => {
-    Object.keys(testData).forEach(key => {
-        test(`calculated fib value for "${key}" is "${testData[key]}"`, () => {
-            expect(fib3(parseInt(key))).toEqual(testData[key]);
-        });
-    });
-});
-
-describe('fib4() calculates correct fib value', () => {
-    Object.keys(testData).forEach(key => {
-        test(`calculated fib value for "${key}" is "${testData[key]}"`, () => {
-            expect(fib4(parseInt(key))).toEqual(testData[key]);
+    describe(`${fnName} calculates correct fib value`, () => {
+        Object.keys(testData).forEach(key => {
+            test(`for "${key}" correct fibonacci sequence is ${testData[key]}`, () => {
+                expect(fn(parseInt(key))).toEqual(testData[key]);
+            });
         });
     });
 });
