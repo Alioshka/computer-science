@@ -34,6 +34,43 @@ function steps1(n) {
   }
 }
 
+function steps2(n, row = 0, stair = '') {
+    if (n === row) {
+        return;
+    }
+
+    if (n === stair.length) {
+        console.log(stair);
+        return steps2(n, row + 1);
+    }
+
+    if (stair.length <= row) {
+        stair += '#';
+    } else {
+        stair += ' ';
+    }
+
+    steps2(n, row, stair);
+}
+
+function steps3(n, row = 0, stair = '') {
+    if (n === row) {
+        return;
+    }
+
+    if (n === stair.length) {
+        console.log(stair);
+        return steps3(n, row + 1);
+    }
+
+    const add = stair.length <= row ? '#' : ' ';
+    steps3(n, row, stair + add);
+}
+
+// steps2 and steps3 exact the same,
+// diff only in ternary operator
 module.exports = {
-    steps1
+    steps1,
+    steps2,
+    steps3
 };
