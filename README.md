@@ -1,8 +1,8 @@
 # Preparation for interview
 
 ## Prerequisites
-1. NODE version >=6.9.1
-2. NPM version >=3.10.8
+1. NODE version >=8.12.1
+2. NPM version >=6.4.1
 3. installed dependencies: `npm i`
 
 ## Run tests
