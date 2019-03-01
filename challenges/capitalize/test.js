@@ -7,10 +7,7 @@ const testData = {
     'i love breakfast at bill miller bbq': 'I Love Breakfast At Bill Miller Bbq'
 };
 
-Object.entries(src).forEach(entry => {
-    let fnName, fn;
-    [fnName, fn] = entry;
-
+Object.entries(src).forEach(([fnName, fn]) => {
     Object.keys(testData).forEach(key => {
         test(`${fnName}("${key}") should return "${testData[key]}"`, () => {
             expect(fn(key)).toEqual(testData[key]);

@@ -2,10 +2,7 @@
 
 const src = require('./index');
 
-Object.entries(src).forEach(entry => {
-    let fnName, fn;
-    [fnName, fn] = entry;
-
+Object.entries(src).forEach(([fnName, fn]) => {
     test(`function ${fnName} exists`, () => {
         expect(typeof fn).toEqual('function');
     });

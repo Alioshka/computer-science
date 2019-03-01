@@ -2,10 +2,7 @@
 
 const src = require('./index');
 
-Object.entries(src).forEach(entry => {
-    let fnName, fn;
-    [fnName, fn] = entry;
-
+Object.entries(src).forEach(([fnName, fn]) => {
     describe(`Given ${fnName}('rail safety', 'fairy tales')`, () => {
         test(`return true`, () => {
             expect(fn('rail safety', 'fairy tales')).toEqual(true);

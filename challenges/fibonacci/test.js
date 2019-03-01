@@ -16,10 +16,7 @@ const testData = {
     39:63245986
 };
 
-Object.entries(src).forEach(entry => {
-    let fnName, fn;
-    [fnName, fn] = entry;
-
+Object.entries(src).forEach(([fnName, fn]) => {
     describe(`${fnName} calculates correct fib value`, () => {
         Object.keys(testData).forEach(key => {
             test(`for "${key}" correct fibonacci sequence is ${testData[key]}`, () => {

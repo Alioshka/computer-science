@@ -2,10 +2,7 @@
 
 const src = require('./index');
 
-Object.entries(src).forEach(entry => {
-    let fnName, fn;
-    [fnName, fn] = entry;
-
+Object.entries(src).forEach(([fnName, fn]) => {
     describe(`Given nums = [2, 7, 11, 15], target = 9
               Because nums[0] + nums[1] = 2 + 7 = 9`, () => {
         test(`${fnName} return [0, 1]`, () => {
