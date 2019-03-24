@@ -2,10 +2,7 @@
 
 const src = require('./index');
 
-Object.entries(src).forEach(entry => {
-    let fnName, fn;
-    [fnName, fn] = entry;
-
+Object.entries(src).forEach(([fnName, fn]) => {
     describe(`${fnName} print correct steps`, () => {
         beforeEach(() => {
             jest.spyOn(console, 'log');
