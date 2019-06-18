@@ -14,6 +14,8 @@ function pivot(arr, start = 0, end = arr.length - 1) {
     let pivot = arr[start];
     let pivotIndex = start;
 
+    // 1. moving everything that less then pivot to the left(beginning of array) before pivot itself
+    // and increase pivot index to track correct pivot place in the array
     for (let i = start + 1; i <= end; i++) {
         if (pivot > arr[i]) {
             pivotIndex++;
@@ -21,7 +23,7 @@ function pivot(arr, start = 0, end = arr.length - 1) {
         }
     }
 
-    // Swap the pivot from the start the swapPoint
+    // Swap the pivot from the start to the pivotIndex
     swap(arr, start, pivotIndex);
     return pivotIndex;
 }
