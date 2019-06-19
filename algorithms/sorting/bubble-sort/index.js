@@ -1,3 +1,5 @@
+'use strict';
+
 // Optimized BubbleSort with noSwaps
 function bubbleSort(arr){
     var noSwaps;
