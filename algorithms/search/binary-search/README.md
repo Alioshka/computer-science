@@ -1,8 +1,5 @@
 # Binary search
 [implementation](./index.js)
-// best: O(1)
-// worst: O(log n)
-// average: O(log n)
 
 ## Big O
 
