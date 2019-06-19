@@ -1,5 +1,5 @@
 # Quick Sort
-
+[implementation](./index.js)
 
 ![Quick_sort](../../../assets/img/Python-Quick-Sort-1.png)
 ![Quick_sort](../../../assets/img/Python-Quick-Sort-2.png)

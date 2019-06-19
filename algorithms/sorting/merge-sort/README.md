@@ -1,4 +1,5 @@
 # Merge Sort
+[implementation](./index.js)
 
 ![Merge_sort](../../../assets/img/Merge_sort_algorithm_diagram.png)
 ![Merge_sort](../../../assets/img/Merge-sort-example.gif)

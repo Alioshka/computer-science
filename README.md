@@ -1,6 +1,7 @@
 # Preparation for interview
 
 * [sorting](algorithms/sorting/README.md)
+* [search](algorithms/search/README.md)
 
 ## Prerequisites
 1. NODE version >=8.12.1

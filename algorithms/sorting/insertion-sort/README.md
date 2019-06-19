@@ -1,4 +1,5 @@
 # Insertion Sort
+[implementation](./index.js)
 
 * Step 1:
 ![Insertion_sort](../../../assets/img/Python-Insertion-Sort-1.png)
