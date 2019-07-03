@@ -9,22 +9,22 @@ function swap(array, i, j){
     }
 }
 
-function pivot(arr, start = 0, end = arr.length - 1) {
+function pivot(arr, startIndex = 0, end = arr.length - 1) {
     // We are assuming the pivot is always the first element
-    let pivot = arr[start];
-    let pivotIndex = start;
+    let pivot = arr[startIndex];
+    let pivotIndex = startIndex;
 
     // 1. moving everything that less then pivot to the left(beginning of array) before pivot itself
     // and increase pivot index to track correct pivot place in the array
-    for (let i = start + 1; i <= end; i++) {
+    for (let i = startIndex + 1; i <= end; i++) {
         if (pivot > arr[i]) {
             pivotIndex++;
             swap(arr, pivotIndex, i);
         }
     }
 
-    // Swap the pivot from the start to the pivotIndex
-    swap(arr, start, pivotIndex);
+    // Swap the pivot from the startIndex to the pivotIndex
+    swap(arr, startIndex, pivotIndex);
     return pivotIndex;
 }
 
