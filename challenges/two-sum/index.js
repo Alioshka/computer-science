@@ -9,16 +9,7 @@
 // Because nums[0] + nums[1] = 2 + 7 = 9,
 // return [0, 1]
 
-function twoSum1(nums, target) {
-    for(let i = 0; i < nums.length - 1; i++) {
-        let secondNum = target - nums[i];
-        if (nums.indexOf(secondNum) !== -1 && nums.lastIndexOf(secondNum) !== i) {
-            return [i, nums.lastIndexOf(secondNum)];
-        }
-    }
-}
-
-function twoSum2(nums, target) {
+function twoSum(nums, target) {
     let storage = {};
     let indexesArray = [];
     for(let i = 0; i < nums.length; i++) {
@@ -33,6 +24,5 @@ function twoSum2(nums, target) {
 }
 
 module.exports = {
-    twoSum1,
-    twoSum2
+    twoSum
 };
