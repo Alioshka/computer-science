@@ -1,5 +1,8 @@
 # Traversing a tree
 
 ## Two ways:
-* Breadth-first Search
-* Depth-first Search
+1. Breadth-first Search
+2. Depth-first Search:
+ * Pre Order
+ * In Order
+ * Post Order
