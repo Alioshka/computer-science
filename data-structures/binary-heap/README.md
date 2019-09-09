@@ -1,7 +1,8 @@
 # BINARY HEAP
 
 ## What is a binary heap?
-**Very** similar to a binary search tree,
+* [Binary Heap](https://www.geeksforgeeks.org/binary-heap/)
+* **Very** similar to a binary search tree,
 but with some different rules
 - **MaxBinaryHeap** - parent nodes are always larger than child nodes.
 ![max1](./assets/max1.png)
