@@ -24,52 +24,52 @@ class BinarySearchTree {
         return searchNode(this.root, value);
     };
 
-    breadFirstSearch(){
-        var node = this.root,
-            data = [],
-            queue = [];
+    breadthFirstSearch(){
+        let node = this.root;
+        let visited = [];
+        let queue = [];
         queue.push(node);
 
         while(queue.length){
             node = queue.shift();
-            data.push(node.value);
+            visited.push(node.value);
             if(node.left) queue.push(node.left);
             if(node.right) queue.push(node.right);
         }
-        return data;
+        return visited;
     }
 
     depthFirstSearchPreOrder(){
-        var data = [];
+        let visited = [];
         function traverse(node){
-            data.push(node.value);
+            visited.push(node.value);
             if(node.left) traverse(node.left);
             if(node.right) traverse(node.right);
         }
         traverse(this.root);
-        return data;
+        return visited;
     }
 
     depthFirstSearchPostOrder(){
-        var data = [];
+        let visited = [];
         function traverse(node){
             if(node.left) traverse(node.left);
             if(node.right) traverse(node.right);
-            data.push(node.value);
+            visited.push(node.value);
         }
         traverse(this.root);
-        return data;
+        return visited;
     }
 
     depthFirstSearchInOrder(){
-        var data = [];
+        let visited = [];
         function traverse(node){
             if(node.left) traverse(node.left);
-            data.push(node.value);
+            visited.push(node.value);
             if(node.right) traverse(node.right);
         }
         traverse(this.root);
-        return data;
+        return visited;
     }
 }
 
@@ -121,7 +121,7 @@ function searchNode(node, value) {
 // find = tree.find(7);
 // find = tree.find(9); // false
 // find = tree.find(10); // false
-// let bfs = tree.breadFirstSearch(); // [10, 5, 13, 2, 7, 11, 16]
+// let bfs = tree.breadthFirstSearch(); // [10, 5, 13, 2, 7, 11, 16]
 // let dfpre = tree.depthFirstSearchPreOrder(); // [10, 5, 2, 7, 13, 11, 16]
 // let dfpost = tree.depthFirstSearchPostOrder(); // [2, 7, 5, 11, 16, 13, 10]
 // let dfin = tree.depthFirstSearchInOrder(); // [2, 5, 7, 10, 11, 13, 16]
