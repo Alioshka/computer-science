@@ -29,24 +29,18 @@ function pivot(arr, startIndex = 0, end = arr.length - 1) {
 }
 
 
-function quickSort(arr, left = 0, right = arr.length -1){
+function quickSort2(arr, left = 0, right = arr.length -1){
     if(left < right){
         let pivotIndex = pivot(arr, left, right);
         //left
-        quickSort(arr,left,pivotIndex-1);
+        quickSort2(arr,left,pivotIndex-1);
         //right
-        quickSort(arr,pivotIndex+1,right);
+        quickSort2(arr,pivotIndex+1,right);
     }
     return arr;
 }
 
-module.exports = {
-    quickSort,
-    quickSort2
-};
-
-// alternative solution:
-function quickSort2(nums) {
+function quickSort(nums) {
     if (nums.length < 2) {
         return nums;
     }
@@ -63,7 +57,12 @@ function quickSort2(nums) {
         }
     }
 
-    return [...quickSort2(left), pivot, ...quickSort2(right)];
+    return [...quickSort(left), pivot, ...quickSort(right)];
     // or without spread operator with concat:
     // return quickSort(left).concat(pivot, quickSort(right));
 }
+
+module.exports = {
+    quickSort,
+    quickSort2
+};

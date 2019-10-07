@@ -1,6 +1,8 @@
 # Preparation for interview
 
 * [sorting](algorithms/sorting/README.md)
+  * [merge-sort](algorithms/sorting/merge-sort/README.md)
+  * [quick-sort](algorithms/sorting/quick-sort/README.md)
 * [search](algorithms/search/README.md)
 
 ### data structures:
