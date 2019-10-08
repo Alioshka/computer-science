@@ -114,9 +114,13 @@ g.addEdge("D","E");
 g.addEdge("D","F");
 g.addEdge("E","F");
 
-g.depthFirstRecursive("A");
-g.depthFirstIterative("A");
-g.breadthFirst("A");
+const dfr = g.depthFirstRecursive("A");
+const dfi = g.depthFirstIterative("A");
+const bf = g.breadthFirst("A");
+
+console.log(dfr);
+console.log(dfi);
+console.log(bf);
 
 //          A
 //        /   \
