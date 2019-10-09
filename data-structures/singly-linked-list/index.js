@@ -22,12 +22,25 @@ class SinglyLinkedList{
         this.length = 0;
     }
     push(val){
-        var newNode = new Node(val);
+        let newNode = new Node(val);
         if(!this.head){
             this.head = newNode;
             this.tail = newNode;
         } else {
             addToTheEnd(this.head, newNode);
+            this.tail = newNode;
+        }
+        this.length++;
+        return this;
+    }
+
+    push2(val){
+        let newNode = new Node(val);
+        if(!this.head){
+            this.head = newNode;
+            this.tail = this.head;
+        } else {
+            this.tail.next = newNode;
             this.tail = newNode;
         }
         this.length++;
@@ -98,7 +111,8 @@ module.exports = {
 // list.push("HELLO");
 // list.push("AND");
 // list.push("GOODBYE");
-// list.push("!");
+// list.push2("!");
+// console.log(list);
 // list.unshift("New Head !!!");
 // console.log(list);
 // let node = list.get(2);
