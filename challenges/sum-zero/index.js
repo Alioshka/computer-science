@@ -37,7 +37,25 @@ function sumZero(arr){
     }
 }
 
+function sumZeroTwoSum(arr){
+    let storage = {};
+    let result;
+    for(let i = 0; i < arr.length; i++){
+        let second =  0 - arr[i];
+        if(storage[second] || storage[second] === 0){
+            result = [storage[second], arr[i]];
+        } else {
+            storage[arr[i]] = arr[i];
+        }
+    }
+    return result;
+}
+
 module.exports = {
     sumZeroBadSimple,
-    sumZero
+    sumZero,
+    sumZeroTwoSum
 };
+
+let result = sumZeroTwoSum([-2, 0, 1, 3]);
+console.log(result);
