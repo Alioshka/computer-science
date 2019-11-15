@@ -1,3 +1,14 @@
+// One Away: There are three types of edits that can be performed on strings:
+// insert a character, remove a character, or replace a character.
+// Given two strings, write a function to check if they are one edit (or zero edits) away.
+// EXAMPLE
+// let result;
+// result = oneEditAway('pale', 'ple'); // true
+// result = oneEditAway('ple', 'pale'); // true
+// result = oneEditAway('pales', 'pale'); // true
+// result = oneEditAway('pale', 'bale'); // true
+// result = oneEditAway('pale', 'bae'); // false
+
 function oneEditAway(str1, str2){
     if(str1.length === str2.length){
         return _oneEditReplace(str1, str2);
