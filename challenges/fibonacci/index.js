@@ -72,15 +72,7 @@ function memoize(fn){
     }
 }
 
-function fib4(n) {
-    if( n <= 1) {
-        return n;
-    } else {
-        return fib4(n - 1) + fib4(n - 2);
-    }
-}
-
-fib4 = memoize(fib4);
+const fib3Memoize = memoize(fib3);
 
 
 
@@ -88,5 +80,5 @@ module.exports = {
     fib1,
     fib2,
     fib3,
-    fib4
+    fib3Memoize
 };

@@ -21,7 +21,7 @@ class SinglyLinkedList{
         this.tail = null;
         this.length = 0;
     }
-    push(val){
+    push2(val){
         let newNode = new Node(val);
         if(!this.head){
             this.head = newNode;
@@ -34,7 +34,7 @@ class SinglyLinkedList{
         return this;
     }
 
-    push2(val){
+    push(val){
         let newNode = new Node(val);
         if(!this.head){
             this.head = newNode;
