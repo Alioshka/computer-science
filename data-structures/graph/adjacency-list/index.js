@@ -40,3 +40,4 @@ g.addEdge("Hong Kong", "Tokyo");
 g.addEdge("Hong Kong", "Dallas");
 g.addEdge("Los Angeles", "Hong Kong");
 g.addEdge("Los Angeles", "Aspen");
+console.log(g);
