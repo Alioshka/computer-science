@@ -3,21 +3,19 @@
 
 class Graph{
     constructor(){
-        this.adjacencyMatrix = [0][0];
+        this.adjacencyMatrix = [];
     }
     addVertex(vertex){
-
     }
-    addEdge(v1,v2){
-        this.adjacencyMatrix[v1][v2] = 1;
-        this.adjacencyMatrix[v2][v1] = 1;
+    addEdge(vertex1,vertex2){
+        this.adjacencyMatrix[vertex1][vertex2] = 1;
+        this.adjacencyMatrix[vertex2][vertex1] = 1;
     }
     removeEdge(vertex1,vertex2){
-        this.adjacencyMatrix[v1][v2] = 0;
-        this.adjacencyMatrix[v2][v1] = 0;
+        this.adjacencyMatrix[vertex1][vertex2] = 0;
+        this.adjacencyMatrix[vertex2][vertex1] = 0;
     }
     removeVertex(vertex){
-
     }
 }
 
