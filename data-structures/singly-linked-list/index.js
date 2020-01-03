@@ -7,34 +7,31 @@ class Node{
     }
 }
 
-function addToTheEnd(node, val){
- if(node.next){
-     addToTheEnd(node.next, val);
- } else {
-     node.next = val;
- }
-}
-
 class SinglyLinkedList{
     constructor(){
         this.head = null;
         this.tail = null;
         this.length = 0;
     }
+
     push2(val){
         let newNode = new Node(val);
         if(!this.head){
             this.head = newNode;
             this.tail = newNode;
         } else {
-            addToTheEnd(this.head, newNode);
+            let current = this.head;
+            while(current.next){
+                current = current.next;
+            }
+            current.next = newNode;
             this.tail = newNode;
         }
         this.length++;
         return this;
     }
 
-    push(val){
+    push(val){ // addAtTail
         let newNode = new Node(val);
         if(!this.head){
             this.head = newNode;
@@ -77,7 +74,7 @@ class SinglyLinkedList{
         return currentHead;
     }
 
-    unshift(val){
+    unshift(val){ // addAtHead
         let newNode = new Node(val);
         if(!this.head) {
             this.head = newNode;

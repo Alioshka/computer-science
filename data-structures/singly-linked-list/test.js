@@ -22,6 +22,20 @@ describe(`SinglyLinkedList`, () => {
         expect(list.head.next.next.next.val).toEqual('!');
     });
 
+    test(`should push2 data to the list`, () => {
+        list.push2('HELLO');
+        list.push2('AND');
+        list.push2('GOODBYE');
+        list.push2("!");
+        expect(list.head.val).toEqual('HELLO');
+        expect(list.tail.val).toEqual('!');
+        expect(list.tail.next).toEqual(null);
+
+        expect(list.head.next.val).toEqual('AND');
+        expect(list.head.next.next.val).toEqual('GOODBYE');
+        expect(list.head.next.next.next.val).toEqual('!');
+    });
+
     test(`should pop data from the list`, () => {
         list.push('HELLO');
         list.push("!");
