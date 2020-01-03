@@ -51,4 +51,15 @@ describe(`SinglyLinkedList`, () => {
         expect(list.head.next.val).toEqual('!');
         expect(list.tail.val).toEqual('!');
     });
+
+    test(`should unshift data from the list`, () => {
+        list.push('Alex');
+        list.push('!');
+        list.unshift('HELLO');
+
+        expect(list.head.val).toEqual('HELLO');
+        expect(list.head.next.val).toEqual('Alex');
+        expect(list.head.next.next.val).toEqual('!');
+        expect(list.tail.val).toEqual('!');
+    });
 });

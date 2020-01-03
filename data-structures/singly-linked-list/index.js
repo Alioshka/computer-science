@@ -38,7 +38,7 @@ class SinglyLinkedList{
         let newNode = new Node(val);
         if(!this.head){
             this.head = newNode;
-            this.tail = this.head;
+            this.tail = newNode;
         } else {
             this.tail.next = newNode;
             this.tail = newNode;
@@ -68,7 +68,7 @@ class SinglyLinkedList{
 
     shift(){
         if(!this.head) return undefined;
-        var currentHead = this.head;
+        let currentHead = this.head;
         this.head = currentHead.next;
         this.length--;
         if(this.length === 0){
@@ -81,7 +81,7 @@ class SinglyLinkedList{
         let newNode = new Node(val);
         if(!this.head) {
             this.head = newNode;
-            this.tail = this.head;
+            this.tail = newNode;
         } else {
             newNode.next = this.head;
             this.head = newNode;
