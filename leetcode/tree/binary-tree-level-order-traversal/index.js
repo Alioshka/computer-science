@@ -18,7 +18,7 @@ var levelOrder = function(root) {
 
     const levelEnd = '*';
     let queue = [root, levelEnd];
-    let level = []
+    let level = [];
     levels = [[root.val]];
 
     while (queue.length > 1) {
