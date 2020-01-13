@@ -1,5 +1,45 @@
 'use strict';
 
+function quickSort(nums) {
+    if (nums.length < 2) {
+        return nums;
+    }
+
+    const pivot = nums[nums.length-1];
+    let left = [];
+    let right = [];
+
+    for (let i = 0; i < nums.length-1; i++) {
+        if (nums[i] < pivot) {
+            left.push(nums[i]);
+        } else {
+            right.push(nums[i]);
+        }
+    }
+
+    return [...quickSort(left), pivot, ...quickSort(right)];
+    // or without spread operator with concat:
+    // return quickSort(left).concat(pivot, quickSort(right));
+}
+
+module.exports = {
+    quickSort,
+    quickSort2 // just for the reference, complicated for coding on the white board approach
+};
+
+// from Colt lectures:
+
+function quickSort2(arr, left = 0, right = arr.length -1){
+    if(left < right){
+        let pivotIndex = pivot(arr, left, right);
+        //left
+        quickSort2(arr,left,pivotIndex-1);
+        //right
+        quickSort2(arr,pivotIndex+1,right);
+    }
+    return arr;
+}
+
 function swap(array, i, j){
     if(array[i] !== array[j]){
         let temp = array[i];
@@ -27,42 +67,3 @@ function pivot(arr, startIndex = 0, end = arr.length - 1) {
     swap(arr, startIndex, pivotIndex);
     return pivotIndex;
 }
-
-
-function quickSort2(arr, left = 0, right = arr.length -1){
-    if(left < right){
-        let pivotIndex = pivot(arr, left, right);
-        //left
-        quickSort2(arr,left,pivotIndex-1);
-        //right
-        quickSort2(arr,pivotIndex+1,right);
-    }
-    return arr;
-}
-
-function quickSort(nums) {
-    if (nums.length < 2) {
-        return nums;
-    }
-
-    const pivot = nums[nums.length-1];
-    let left = [];
-    let right = [];
-
-    for (let i = 0; i < nums.length-1; i++) {
-        if (nums[i] < pivot) {
-            left.push(nums[i]);
-        } else {
-            right.push(nums[i]);
-        }
-    }
-
-    return [...quickSort(left), pivot, ...quickSort(right)];
-    // or without spread operator with concat:
-    // return quickSort(left).concat(pivot, quickSort(right));
-}
-
-module.exports = {
-    quickSort,
-    quickSort2
-};
