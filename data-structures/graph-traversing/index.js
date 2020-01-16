@@ -118,9 +118,9 @@ const dfr = g.depthFirstRecursive("A");
 const dfi = g.depthFirstIterative("A");
 const bf = g.breadthFirst("A");
 
-console.log(dfr);
-console.log(dfi);
-console.log(bf);
+console.log(dfr); // ["A","B","D","E","C","F"]
+console.log(dfi); // ["A","C","E","F","D","B"]
+console.log(bf); // ["A","B","C","D","E","F"]
 
 //          A
 //        /   \
