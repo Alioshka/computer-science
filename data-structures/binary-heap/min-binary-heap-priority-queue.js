@@ -76,3 +76,14 @@ ER.enqueue("gunshot wound", 1);
 ER.enqueue("high fever",4);
 ER.enqueue("broken arm",2);
 ER.enqueue("glass in foot",3);
+
+let el = true;
+while(el){
+    el = ER.dequeue();
+    console.log(el);
+}
+// first output: { "val": "gunshot wound", "priority": 1 }
+// second output: { "val": "broken arm", "priority": 2 }
+// next: { "val": "glass in foot", "priority": 3 }
+// next: { "val": "high fever", "priority": 4 }
+// next: { "val": "common cold", "priority": 5 }
