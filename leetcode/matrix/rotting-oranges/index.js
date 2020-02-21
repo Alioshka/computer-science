@@ -77,28 +77,28 @@ var orangesRotting = function(grid) {
     // Add them to the depthQueue
     function rotNeighbors(row, col){
         // check up
-        while(grid[row][col+1] === 1){
+        if(grid[row][col+1] === 1){
             freshOranges--;
             grid[row][col+1] = 2;
             depthQueue.push([row, col+1]);
         }
 
         // check down
-        while(grid[row][col-1] === 1){
+        if(grid[row][col-1] === 1){
             freshOranges--;
             grid[row][col-1] = 2;
             depthQueue.push([row, col-1]);
         }
 
         // check left
-        while(grid[row-1] && grid[row-1][col] === 1){
+        if(grid[row-1] && grid[row-1][col] === 1){
             freshOranges--;
             grid[row-1][col] = 2;
             depthQueue.push([row-1, col]);
         }
 
         // check right
-        while(grid[row+1] && grid[row+1][col] === 1){
+        if(grid[row+1] && grid[row+1][col] === 1){
             freshOranges--;
             grid[row+1][col] = 2;
             depthQueue.push([row+1, col]);

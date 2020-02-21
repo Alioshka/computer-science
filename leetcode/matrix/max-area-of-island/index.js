@@ -30,6 +30,7 @@ var maxAreaOfIsland = function(grid) {
     for(let i = 0; i < grid.length; i++){
         for(let j = 0; j < grid[0].length; j++){
             if(grid[i][j] === 1){
+                grid[i][j] = -1; // mark as visited
                 max = Math.max(exploreIsland(grid, i, j), max);
             }
         }
@@ -39,42 +40,29 @@ var maxAreaOfIsland = function(grid) {
 
 function exploreIsland(grid, i, j){
     let area = 1;
-    grid[i][j] = true;
-
-    const _i = i;
-    const _j = j;
 
     // check up
-    while(grid[i][j+1] === 1){
+    if(grid[i][j+1] === 1){
+        grid[i][j+1] = -1;
         area = area + exploreIsland(grid, i, j+1);
-        // area += 1;
-        grid[i][j+1] = true;
-        j += 1;
     }
-    j = _j; // reset to initial
 
     // check down
-    while(grid[i][j-1] === 1){
+    if(grid[i][j-1] === 1){
+        grid[i][j-1] = -1;
         area = area + exploreIsland(grid, i, j-1);
-        // area += 1;
-        grid[i][j-1] = true;
-        j -= 1;
     }
-    j = _j; // reset to initial
 
     // check left
-    while(grid[i-1] && grid[i-1][j] === 1){
+    if(grid[i-1] && grid[i-1][j] === 1){
+        grid[i-1][j] = -1;
         area = area + exploreIsland(grid, i-1, j);
-        grid[i-1][j] = true;
-        i -= 1;
     }
-    i = _i; // reset to initial
 
     // check right
-    while(grid[i+1] && grid[i+1][j] === 1){
+    if(grid[i+1] && grid[i+1][j] === 1){
+        grid[i+1][j] = -1;
         area = area + exploreIsland(grid, i+1, j);
-        grid[i+1][j] = true;
-        i += 1;
     }
 
     return area;
