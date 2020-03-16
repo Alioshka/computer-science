@@ -12,7 +12,7 @@ function solution(N, S, T){
     ships.forEach(ship =>{
         let countTotal = 0;
         let countHits = 0;
-        let [start, end] = buildShip(ship);
+        let [start, end] = ship;
         for(let row = Number(start[0]); row <= Number(end[0]); row++) {
             for(let col = start[1].charCodeAt(0) - 96; col <= end[1].charCodeAt(0) - 96; col++){
                 countTotal += 1;
@@ -44,7 +44,7 @@ function buildShips(S){
     let shipStrings = S.toLowerCase().split(',');
     let results = [];
     shipStrings.forEach(string => {
-        results.push(string.split(' '));
+        results.push(buildShip(string.split(' ')));
     });
     return results;
 }
