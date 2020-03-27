@@ -12,14 +12,8 @@ function binarySearch(arr, elem) {
         }
         middle = Math.floor((start + end) / 2);
     }
-    // version 1
-    if(arr[middle] === elem){
-        return middle;
-    }
-    return -1;
-    // version 2
-    // return arr[middle] === elem ? middle : -1;
 
+   return arr[middle] === elem ? middle : -1;
 }
 
 module.exports = {
