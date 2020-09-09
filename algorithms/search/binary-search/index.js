@@ -1,10 +1,11 @@
 'use strict';
 
 function binarySearch(arr, elem) {
-    var start = 0;
-    var end = arr.length - 1;
-    var middle = Math.floor((start + end) / 2);
-    while(arr[middle] !== elem && start <= end) {
+    let start = 0;
+    let end = arr.length - 1;
+    let middle = Math.floor((start + end) / 2);
+
+    while(arr[middle] !== elem && start <= end){
         if(elem < arr[middle]){
             end = middle - 1;
         } else {
@@ -13,7 +14,7 @@ function binarySearch(arr, elem) {
         middle = Math.floor((start + end) / 2);
     }
 
-   return arr[middle] === elem ? middle : -1;
+    return arr[middle] === elem ? middle : -1;
 }
 
 module.exports = {
