@@ -1,13 +1,5 @@
 # Preparation for interview
 
-* [sorting](algorithms/sorting/README.md)
-  * [merge-sort](algorithms/sorting/merge-sort/README.md)
-  * [quick-sort](algorithms/sorting/quick-sort/README.md)
-* [search](algorithms/search/README.md)
-
-### data structures:
-* [binary heap](data-structures/binary-heap/README.md)
-
 ## Prerequisites
 1. NODE version >=8.12.1
 2. NPM version >=6.4.1

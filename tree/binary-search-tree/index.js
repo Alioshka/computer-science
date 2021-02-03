@@ -24,6 +24,10 @@ class BinarySearchTree {
         return searchNode(this.root, value);
     };
 
+    //      10
+    //   5     13
+    // 2  7  11  16
+    // [10, 5, 13, 2, 7, 11, 16]
     breadthFirstSearch(){
         let node = this.root;
         let visited = [];
@@ -39,6 +43,10 @@ class BinarySearchTree {
         return visited;
     }
 
+    //      10
+    //   5     13
+    // 2  7  11  16
+    // [10, 5, 2, 7, 13, 11, 16]
     depthFirstSearchPreOrder(){
         let visited = [];
         function traverse(node){
@@ -50,23 +58,31 @@ class BinarySearchTree {
         return visited;
     }
 
-    depthFirstSearchPostOrder(){
-        let visited = [];
-        function traverse(node){
-            if(node.left) traverse(node.left);
-            if(node.right) traverse(node.right);
-            visited.push(node.value);
-        }
-        traverse(this.root);
-        return visited;
-    }
-
+    //      10
+    //   5     13
+    // 2  7  11  16
+    // [2, 5, 7, 10, 11, 13, 16]
     depthFirstSearchInOrder(){
         let visited = [];
         function traverse(node){
             if(node.left) traverse(node.left);
             visited.push(node.value);
             if(node.right) traverse(node.right);
+        }
+        traverse(this.root);
+        return visited;
+    }
+
+    //      10
+    //   5     13
+    // 2  7  11  16
+    // [2, 7, 5, 11, 16, 13, 10]
+    depthFirstSearchPostOrder(){
+        let visited = [];
+        function traverse(node){
+            if(node.left) traverse(node.left);
+            if(node.right) traverse(node.right);
+            visited.push(node.value);
         }
         traverse(this.root);
         return visited;

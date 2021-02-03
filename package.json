@@ -4,8 +4,8 @@
   "description": "interview preparation",
   "main": "i",
   "scripts": {
-    "test": "./node_modules/jest/bin/jest.js",
-    "test:all": "npm test ./"
+    "test": "node node_modules/jest/bin/jest.js",
+    "test:all": "npm test"
   },
   "author": "Aliaksei Alioshka",
   "license": "ISC",

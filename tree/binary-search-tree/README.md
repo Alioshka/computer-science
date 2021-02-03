@@ -16,5 +16,6 @@
 
 * In Order
  ![1](./assets/inorder.png)
+  - [convert-sorted-array-to-binary-search-tree](./convert-sorted-array-to-binary-search-tree/index.js)
 * Pre Order
  ![1](./assets/preorder.png)

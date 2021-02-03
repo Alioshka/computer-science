@@ -1,7 +1,7 @@
 # Bubble Sort
 [implementation](./index.js)
 
-![Bubble_sort](../../../assets/img/Bubble-sort-example.gif)
+![Bubble_sort](../assets/img/Bubble-sort-example.gif)
 
 ## Big O
 
